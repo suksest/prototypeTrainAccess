@@ -1,0 +1,235 @@
+/*=======================
+#FF6115 --> orange tua
+#FFE1CC --> orange muda
+#0D9AE0 --> biru tua
+#CFEBFA --> biru muda
+=======================*/
+.navbar-default {
+  background-color: #0d9ae0;
+  border-color: #007fbd;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #007fbd;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #007fbd;
+}
+.navbar-default .navbar-toggle {
+  border-color: #007fbd;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #007fbd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #007fbd;
+  }
+}
+
+body{
+  background-color: MintCream;
+}
+
+.badge-active{
+  color: white;
+  background-color: #337ab7;
+}
+
+.det-pass{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.det-pass.pass-active > .id-pass{
+  /* margin-top: -7px;
+  margin-left: - */
+  border: 1px solid #FF6115;
+  padding: 20px 3px;
+  font-size: 1.5em;
+  background-color: #FF6115;
+  color: #fff;
+  height: 70px;
+  width: 50px;
+  border-radius: 4px;
+  float: left;
+}
+
+.det-pass.pass-active > .name-seat{
+  /* margin-top: -7px;
+  margin-left: - */
+  border: 1px solid #FF6115;
+  background-color: #FFE1CC;
+  color: black;
+  padding: 14px 3px;
+  border-radius: 4px;
+}
+
+.pass-selected:hover{
+  cursor: pointer;
+}
+
+.det-pass.pass-selected > .id-pass{
+  /* margin-top: -7px;
+  margin-left: - */
+  border: 1px solid #0D9AE0;
+  padding: 20px 3px;
+  font-size: 1.5em;
+  background-color: #0D9AE0;
+  color: #fff;
+  height: 70px;
+  width: 50px;
+  border-radius: 4px;
+  float: left;
+}
+
+.det-pass.pass-selected > .name-seat{
+  /* margin-top: -7px;
+  margin-left: - */
+  border: 1px solid #0D9AE0;
+  background-color: #CFEBFA;
+  color: black;
+  padding: 14px 3px;
+  border-radius: 4px;
+}
+
+.legend-seat-active{
+  width: 15px;
+  height: 15px;
+  background-color:#FF6115;
+  border-radius: 4px;
+  display: inline-grid;
+}
+
+.legend-seat-selected{
+  width: 15px;
+  height: 15px;
+  background-color:#0D9AE0;
+  border-radius: 4px;
+  display: inline-grid;
+}
+
+.legend-seat-available{
+  width: 15px;
+  height: 15px;
+  background-color:#fff;
+  border: 1px solid #0D9AE0;
+  border-radius: 4px;
+  display: inline-grid;
+}
+
+.legend-seat-unavailable{
+  width: 15px;
+  height: 15px;
+  background-color:#ccc;
+  border-radius: 4px;
+  display: inline-grid;
+}
+
+.seat-cell{
+  margin-left: 8px;
+  width: 25px;
+  height: 25px;
+  background-color:#ccc;
+  float: left;
+  display: inline-grid;
+}
+
+.seat-cell.seat-cell-available{
+  border-radius: 4px;
+  border: 1px solid #0D9AE0;
+  background-color: #fff;
+}
+
+.seat-cell.seat-cell-available:hover{
+  border-radius: 4px;
+  background-color: #FFE1CC;
+  border: 1px solid #FF6115;
+  color: #ccc;
+}
+
+.seat-cell.seat-cell-unavailable{
+  border-radius: 4px;
+  background-color: #ccc;
+}
+
+.seat-cell.seat-cell-active{
+  border-radius: 4px;
+  border: 1px solid #FF6115;
+  background-color: #FF6115;
+  text-align: center;
+  color: #fff;
+}
+
+.seat-cell.seat-cell-selected{
+  border-radius: 4px;
+  border: 1px solid #0D9AE0;
+  background-color: #0D9AE0;
+  text-align: center;
+  color: #fff;
+}
+
+.gerbong{
+  padding-left: 17.5%;
+}
+
+.seat-row{
+  margin: 0.5% 0;
+}
+
+.row-label{
+  background-color: #fff;
+}
+
+.col-label{
+  text-align: center;
+  background-color: #fff;
+}

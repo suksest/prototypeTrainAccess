@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>train Access</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body style = "padding-top: 70px;">
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="text-right"><span class="badge badge-active">1</span> Booking <span class="badge badge-active">2</span> Review <span class="badge badge-active">3</span> Payment <span class="badge badge-active">4</span> Procces <span class="badge badge-active">5</span> E-ticket Issued</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success -bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%
+            <span class="sr-only"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>Process</h1>
+    <div class="alert alert-info text-center">Your E-Ticket has been issued!</div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="well well-sm">
+          <p class="text-center">Booking Code <span class="text-primary">H78AP3</span></p>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Departure Train</h3>
+            <p id="dep-date"></p>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td id="dep-time"></td>
+                <td><strong>Bandung</strong><br>Bandung Station</td>
+                <td rowspan="2"><strong>Ciremai</strong><br>Executive (A)</td>
+              </tr>
+              <tr>
+                <td id="arr-time"></td>
+                <td><strong>Cirebon</strong><br>Cirebon Station</td>
+              </tr>
+            </table>
+          </div> <!-- panel body -->
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Return Train</h3>
+            <p id="dep2-date"></p>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td id="dep2-time"></td>
+                <td><strong>Cirebon</strong><br>Cirebon Station</td>
+                <td rowspan="2"><strong>Harina</strong><br>Economy (C)</td>
+              </tr>
+              <tr>
+                <td id="arr2-time"></td>
+                <td><strong>Bandung</strong><br>Bandung Station</td>
+              </tr>
+            </table>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div>
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">List of Passenger(s)</h3>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2"><strong>1. Mr Nur Rohman(adult)</strong></td>
+                </tr>
+                <tr>
+                  <td>ID Card / KTP</td>
+                  <td>3277002210960016</td>
+                </tr>
+                <tr>
+                  <td>Seat Number (depart)</td>
+                  <td>Executive 1/1A</td>
+                </tr>
+                <tr>
+                  <td>Seat Number (return)</td>
+                  <td>Economy 1/5A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> <!-- panel body -->
+          <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2"><strong>2. Mrs Azri Aliva Alhania(adult)</strong></td>
+                </tr>
+                <tr>
+                  <td>ID Card / KTP</td>
+                  <td>3277894909949999</td>
+                </tr>
+                <tr>
+                  <td>Seat Number (depart)</td>
+                  <td>Executive 1/1B</td>
+                </tr>
+                <tr>
+                  <td>Seat Number (return)</td>
+                  <td>Economy 1/5B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> <!-- panel body -->
+        </div>
+        <button type="button" class="btn btn-primary" onclick="printTicket()"><span class="glyphicon glyphicon-print"></span> Print E-Ticket</button>
+      </div>
+    </div> <!-- row -->
+  </div> <!-- container -->
+  <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="row">
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+      <div class="row" style="color: white;">
+        <div class="col-lg-6">
+          <p>
+            Kelompok 1 - Sistem Informasi Tahun Akademik 2017/2018
+            Anggota Kelompok:
+            <ul>
+              <li>Azri Aliva Alhania (15152400)</li>
+              <li>Nur Rohman (151524025)</li>
+              <li>Sukma Setyaji (151524030)</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <!-- technology support -->
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<script type="text/javascript">
+window.onload = setDate();
+function setDate(){
+  var date_now = new Date();
+  var date_return = new Date(date_now.getTime() + 345599887);
+  document.getElementById("dep-date").innerHTML = formatDate(date_now);
+  document.getElementById("dep-time").innerHTML = "06:15<br>" + formatDate(date_now);
+  document.getElementById("arr-time").innerHTML = "10:27<br>" + formatDate(date_now);
+  document.getElementById("dep2-date").innerHTML = formatDate(date_return);
+  document.getElementById("dep2-time").innerHTML = "06:15<br>" + formatDate(date_return);
+  document.getElementById("arr2-time").innerHTML = "10:27<br>" + formatDate(date_return);
+}
+
+function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+  ];
+
+  var dayNames = [
+    "Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"
+  ];
+
+  var dayIndex = date.getDay();
+  var datenumber = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return dayIndex = dayNames[dayIndex] + ', ' + datenumber + ' ' + monthNames[monthIndex] + ' ' + year;
+}
+
+function printTicket(){
+  window.print();
+}
+
+</script>
+</body>
+</html>

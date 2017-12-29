@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>train Access</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body style = "padding-top: 70px;">
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-push-5 col-lg-7 form-group">
+            <label class="radio-inline"><input type="radio" name="optradio" id="reg-train" checked onchange="setStation()">Train</label>
+            <label class="radio-inline"><input type="radio" name="optradio" id="air-train" onchange="setStation()">Airport Train</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 form-group">
+            <p class="text-left"><strong>1. Train Destination</strong></p>
+            <div class="form-group" style="border-right: solid 1 px #ccc;">
+              <label for="sel-dep-st">Origin:</label>
+              <select class="form-control" id="sel-dep-st">
+              </select>
+              <label for="sel-dst-st">Destination:</label>
+              <select class="form-control" id="sel-dst-st">
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <p class="text-left"><strong>2. Travel Date</strong></p>
+            <form class="form-group" id="travel-date">
+              <label for="sel-dep-date">Departure:</label>
+              <input id="sel-dep-date" class="form-control" type="date" name="date-dep" onclick="setAttributeDepartureDate()">
+              <div class="row">
+                <div class="col-lg-push-3 col-lg-9">
+                  <label class="radio-inline"><input type="radio" name="optradio" id="one-train" checked onchange="setTicket()">One Way</label>
+                  <label class="radio-inline"><input type="radio" name="optradio" id="ret-train" onchange="setTicket()">Return</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <p class="text-left"><strong>3. Number of Passengers</strong></p>
+            <form class="form-inline">
+              <div class="form-group col-sm-6">
+                <label for="sel-adult">Adult:</label>
+                <select class="form-control form-inline" id="sel-adult" onchange="selectInfant()">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="sel-infant">Infant:</label>
+                <select class="form-control form-inline" id="sel-infant">
+                  <option class="opt-infant">0</option>
+                </select>
+              </div>
+            </form>
+            <button id="search-train" class="btn btn-warning pull-right" type="submit" name="button" style="margin-top:3em;" onclick="search()">Search Ticket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="row">
+          <a class="navbar-brand" href="index.html">train Access</a>
+        </div>
+        <div class="row" style="color: white;">
+          <div class="col-lg-6">
+            <p>
+              Kelompok 1 - Sistem Informasi Tahun Akademik 2017/2018
+              Anggota Kelompok:
+              <ul>
+                <li>Azri Aliva Alhania (15152400)</li>
+                <li>Nur Rohman (151524025)</li>
+                <li>Sukma Setyaji (151524030)</li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- technology support -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<script type="text/javascript">
+    function search(){
+      if (document.getElementById("reg-train").checked == true) {
+        if (document.getElementById("one-train").checked == true) {
+          window.location.href = "reguler/onetrain.html";
+        }else if (document.getElementById("ret-train").checked == true) {
+          window.location.href = "reguler/returntrain.html"
+        }
+      }else if (document.getElementById("air-train").checked == true) {
+        if (document.getElementById("one-train").checked == true) {
+          window.location.href = "airport/onetrain.html"
+        }else if (document.getElementById("ret-train").checked == true) {
+          window.location.href = "airport/returntrain.html"
+        }
+      }
+    }
+
+    function setTicket(){
+      var travel_date = document.getElementById("travel-date");
+      if(document.getElementById("ret-train").checked == true){
+        var label = document.createElement("label");
+        label.setAttribute("for","sel-ret-date");
+        label.setAttribute("id","label-ret-date");
+        label.innerHTML= "Return:";
+        var input = document.createElement("input");
+        input.setAttribute("id","sel-ret-date");
+        input.setAttribute("class","form-control");
+        input.setAttribute("type","date");
+        input.setAttribute("name","date-ret");
+        input.setAttribute("onclick","setAttributeReturnDate()");
+        travel_date.appendChild(label);
+        travel_date.appendChild(input);
+      }else if (document.getElementById("one-train").checked == true) {
+        var label = document.getElementById("label-ret-date");
+        var input = document.getElementById("sel-ret-date");
+        travel_date.removeChild(label);
+        travel_date.removeChild(input);
+      }
+    }
+
+    function setStation(){
+      if (document.getElementById("reg-train").checked == true) {
+        document.getElementById("sel-dep-st").innerHTML = "<option>BD - BANDUNG</option><br><option>CN - CIREBON</option><br><option>GMR - GAMBIR</option><br><option>PSE - PASAR SENEN</option><br>";
+        document.getElementById("sel-dst-st").innerHTML = "<option>BD - BANDUNG</option><br><option>CN - CIREBON</option><br><option>GMR - GAMBIR</option><br><option>PSE - PASAR SENEN</option><br>";
+      }else if(document.getElementById("air-train").checked == true){
+        document.getElementById("sel-dep-st").innerHTML = "<option>MD - MEDAN</option><br><option>KLN - KUALANAMU</option><br>";
+        document.getElementById("sel-dst-st").innerHTML = "<option>MD - MEDAN</option><br><option>KLN - KUALANAMU</option><br>";
+      }
+    }
+
+    function setAttributeDepartureDate(){
+      setMaxDepartureDate();
+      setMinDepartureDate();
+    }
+
+    function setAttributeReturnDate(){
+      setMaxReturnDate();
+      setMinReturnDate();
+    }
+
+    function setMaxDepartureDate(){
+      var time_now = new Date();
+      var date_value = time_now.getTime() + 7776000000; //90 day in miliseconds
+      var time_max = new Date(date_value);
+      month = "";
+      month = ((time_max.getMonth()+1 < 10) ? month.concat("0",(time_max.getMonth()+1).toString()) : (time_max.getMonth()+1).toString());
+      var date_max = "";
+      date_max = date_max.concat(time_max.getFullYear().toString(),"-",month,"-",time_max.getDate().toString());
+      document.getElementById("sel-dep-date").setAttribute("max",date_max);
+    }
+
+    function setMinDepartureDate(){
+      var time_now = new Date();
+      var date_now = "";
+      var month = "";
+      month = ((time_now.getMonth()+1 < 10) ? month.concat("0",(time_now.getMonth()+1).toString()) : (time_now.getMonth()+1).toString());
+      date_now = date_now.concat(time_now.getFullYear().toString(),"-",month,"-",time_now.getDate().toString());
+      document.getElementById("sel-dep-date").value = date_now;
+      document.getElementById("sel-dep-date").setAttribute("min",date_now);
+    }
+
+    function setMaxReturnDate(){
+      var time_now = new Date();
+      var date_value = time_now.getTime() + 7776000000; //90 day in miliseconds
+      var time_max = new Date(date_value);
+      month = "";
+      month = ((time_max.getMonth()+1 < 10) ? month.concat("0",(time_max.getMonth()+1).toString()) : (time_max.getMonth()+1).toString());
+      var date_max = "";
+      date_max = date_max.concat(time_max.getFullYear().toString(),"-",month,"-",time_max.getDate().toString());
+      document.getElementById("sel-ret-date").setAttribute("max",date_max);
+    }
+
+    function setMinReturnDate(){
+      var time_now = new Date();
+      var date_now = "";
+      var month = "";
+      month = ((time_now.getMonth()+1 < 10) ? month.concat("0",(time_now.getMonth()+1).toString()) : (time_now.getMonth()+1).toString());
+      date_now = date_now.concat(time_now.getFullYear().toString(),"-",month,"-",time_now.getDate().toString());
+      document.getElementById("sel-ret-date").value = date_now;
+      document.getElementById("sel-ret-date").setAttribute("min",date_now);
+    }
+
+    function selectInfant(){
+      var adult = document.getElementById("sel-adult").value;
+      var infant = document.getElementById("sel-infant");
+      var opt_infant = document.getElementsByClassName("opt-infant");
+      var length = opt_infant.length;
+      if (length > 0) {
+        for(i=1;i<length;i++){
+          opt_infant[opt_infant.length-1].parentNode.removeChild(opt_infant[opt_infant.length-1]);
+        }
+      }
+
+      var option = document.createElement("option");
+      for(i=1;i<=parseInt(adult);i++){
+        option = document.createElement("option");
+        option.setAttribute("class","opt-infant");
+        option.innerHTML = i;
+        infant.appendChild(option);
+      }
+    }
+  </script>
+</body>
+</html>
