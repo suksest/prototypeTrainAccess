@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>train Access</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body style = "padding-top: 70px;">
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="text-right"><span class="badge badge-active">1</span> Booking <span class="badge">2</span> Review <span class="badge">3</span> Payment <span class="badge">4</span> Procces <span class="badge">5</span> E-ticket Issued</p>
+      </div>
+    </div>
+    <h1>Select Departure Seat</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <h4>Medan - Kuala Namu</h4>
+        <p id="dep-date"></p>
+      </div>
+      <div class="col-lg-6">
+        <h4>Seat Selection Time</h4>
+        <i class="glyphicon glyphicon-time text-primary"> <span style="font-size: 1.3em;" id="countdown"></span></i>
+      </div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-3 col-lg-push-3">
+        <div class="det-pass pass-active">
+          <div class="id-pass">P1</div>
+          <div class="name-seat">Nur Rohman <br><strong>K40 1 / 1A</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-lg-push-3">
+        <div class="det-pass pass-selected" onclick="setActivePassenger(this)">
+          <div class="id-pass">P2</div>
+          <div class="name-seat">Azri Aliva <br><strong>K40 1 / 1B</strong></div>
+        </div>
+      </div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">K40 1</h3>
+          </div>
+          <div class="panel-body gerbong">
+            <div class="row">
+              <div class="col-lg-12 seat-row">
+                <div class="seat-cell row-label">A</div>
+                <div class="seat-cell seat-cell-active" id="1A">P1</div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="2A"></div>
+                <div class="seat-cell seat-cell-unavailable" id="3A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="4A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="5A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="6A"></div>
+                <div class="seat-cell seat-cell-unavailable" id="7A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="8A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="9A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="10A"></div>
+                <div class="seat-cell seat-cell-unavailable" id="11A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="12A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="13A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="14A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="15A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="16A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="17A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="18A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="19A"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="20A"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 seat-row">
+                <div class="seat-cell row-label">B</div>
+                <div class="seat-cell seat-cell-selected" id="1B">P2</div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="2B"></div>
+                <div class="seat-cell seat-cell-unavailable" id="3B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="4B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="5B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="6B"></div>
+                <div class="seat-cell seat-cell-unavailable" id="7B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="8B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="9B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="10B"></div>
+                <div class="seat-cell seat-cell-unavailable" id="11B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="12B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="13B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="14B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="15B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="16B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="17B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="18B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="19B"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="20B"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 seat-row">
+                <div class="seat-cell row-label"></div>
+                <div class="seat-cell col-label">1</div>
+                <div class="seat-cell col-label">2</div>
+                <div class="seat-cell col-label">3</div>
+                <div class="seat-cell col-label">4</div>
+                <div class="seat-cell col-label">5</div>
+                <div class="seat-cell col-label">6</div>
+                <div class="seat-cell col-label">7</div>
+                <div class="seat-cell col-label">8</div>
+                <div class="seat-cell col-label">9</div>
+                <div class="seat-cell col-label">10</div>
+                <div class="seat-cell col-label">11</div>
+                <div class="seat-cell col-label">12</div>
+                <div class="seat-cell col-label">13</div>
+                <div class="seat-cell col-label">14</div>
+                <div class="seat-cell col-label">15</div>
+                <div class="seat-cell col-label">16</div>
+                <div class="seat-cell col-label">17</div>
+                <div class="seat-cell col-label">18</div>
+                <div class="seat-cell col-label">19</div>
+                <div class="seat-cell col-label">20</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 seat-row">
+                <div class="seat-cell row-label">C</div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="1C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="2C"></div>
+                <div class="seat-cell seat-cell-unavailable" id="3C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="4C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="5C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="6C"></div>
+                <div class="seat-cell seat-cell-unavailable" id="7C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="8C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="9C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="10C"></div>
+                <div class="seat-cell seat-cell-unavailable" id="11C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="12C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="13C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="14C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="15C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="16C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="17C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="18C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="19C"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="20C"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 seat-row">
+                <div class="seat-cell row-label">D</div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="1D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="2D"></div>
+                <div class="seat-cell seat-cell-unavailable" id="3D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="4D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="5D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="6D"></div>
+                <div class="seat-cell seat-cell-unavailable" id="7D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="8D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="9D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="10D"></div>
+                <div class="seat-cell seat-cell-unavailable" id="11D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="12D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="13D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="14D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="15D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="16D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="17D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="18D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="19D"></div>
+                <div class="seat-cell seat-cell-available" onclick="setActiveSeat(this)" id="20D"></div>
+              </div>
+            </div>
+          </div> <!-- panel-body -->
+          <div class="panel-footer text-center">
+            <ul class="list-inline">
+              <li><div class="legend-seat-active">&nbsp;</div>&nbsp;Active</li>
+              <li><div class="legend-seat-selected">&nbsp;</div>&nbsp;Selected</li></li>
+              <li><div class="legend-seat-available">&nbsp;</div>&nbsp;Available</li></li>
+              <li><div class="legend-seat-unavailable">&nbsp;</div>&nbsp;Unavailable</li></li>
+            </ul>
+          </div>
+        </div> <!-- panel-default -->
+      </div> <!-- col-lg-12 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div id="seat-payment" class="col-lg-push-8 col-lg-4">
+        <button type="button" name="button-seat" class="btn btn-warning" onclick="directReview()">Restore Default Seat</button>&nbsp;or&nbsp;
+        <button type="button" name="button-payment" class="btn btn-primary" onclick="directReview()">Continue to Payment</button>
+      </div>
+    </div>
+  </div> <!-- container -->
+
+  <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="row">
+          <a class="navbar-brand" href="index.html">train Access</a>
+        </div>
+        <div class="row" style="color: white;">
+          <div class="col-lg-6">
+            <p>
+              Kelompok 1 - Sistem Informasi Tahun Akademik 2017/2018
+              Anggota Kelompok:
+              <ul>
+                <li>Azri Aliva Alhania (15152400)</li>
+                <li>Nur Rohman (151524025)</li>
+                <li>Sukma Setyaji (151524030)</li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- technology support -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script type="text/javascript">
+    window.onload = setDate();
+
+    function setDate(){
+      var date_now = new Date();
+      var date_return = new Date(date_now.getTime() + 345599887);
+      document.getElementById("dep-date").innerHTML = formatDate(date_now) + ", 2 Adult";
+    }
+
+    function formatDate(date) {
+      var monthNames = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+      ];
+
+      var dayNames = [
+        "Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"
+      ];
+
+      var dayIndex = date.getDay();
+      var datenumber = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+
+      return dayIndex = dayNames[dayIndex] + ', ' + datenumber + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+
+    document.getElementById('countdown').innerHTML = 05 + ":" + 00;
+    startTimer();
+
+    function startTimer() {
+      var presentTime = document.getElementById('countdown').innerHTML;
+      var timeArray = presentTime.split(/[:]+/);
+      var m = timeArray[0];
+      var s = checkSecond((timeArray[1] - 1));
+      if(s==59){m=m-1}
+      if(m<0){
+        alert("Time's up you'll be directed to previous process");
+        window.location.href = "onetrain.html";
+      }//if(m<0){alert('countdown completed')}
+
+      document.getElementById('countdown').innerHTML =
+        m + ":" + s;
+      setTimeout(startTimer, 1000);
+    }
+
+    function checkSecond(sec) {
+      if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+      if (sec < 0) {sec = "59"};
+      return sec;
+    }
+
+    function setActiveSeat(newActiveSeat) {
+      var currentActiveSeat = document.getElementsByClassName("seat-cell-active")[0];
+      newActiveSeat.innerHTML = currentActiveSeat.innerHTML;
+      newActiveSeat.setAttribute("class","seat-cell seat-cell-active");
+      newActiveSeat.removeAttribute("onclick");
+      currentActiveSeat.innerHTML = "";
+      currentActiveSeat.setAttribute("class","seat-cell seat-cell-available");
+      currentActiveSeat.setAttribute("onclick","setActiveSeat(this)");
+
+      var activePass = document.getElementsByClassName("pass-active")[0];
+      activePass.childNodes[3].childNodes[2].innerHTML = "K40 1 / " + newActiveSeat.id;
+    }
+
+    function setActivePassenger(newActivePassenger){
+      var currentActivePassenger =  document.getElementsByClassName("pass-active")[0];
+      newActivePassenger.setAttribute("class","det-pass pass-active");
+      newActivePassenger.removeAttribute("onclick");
+      currentActivePassenger.setAttribute("class","det-pass pass-selected");
+      currentActivePassenger.setAttribute("onclick","setActivePassenger(this)");
+
+      var newActiveSeat = document.getElementsByClassName("seat-cell-selected")[0];
+      var currentActiveSeat = document.getElementsByClassName("seat-cell-active")[0];
+      var temp = newActiveSeat.innerHTML;
+      newActiveSeat.innerHTML = currentActiveSeat.innerHTML;
+      newActiveSeat.setAttribute("class","seat-cell seat-cell-active");
+      newActiveSeat.removeAttribute("onclick");
+      currentActiveSeat.innerHTML = temp;
+      currentActiveSeat.setAttribute("class","seat-cell seat-cell-selected");
+      currentActiveSeat.setAttribute("onclick","setActiveSeat(this)");
+
+      var activePass = document.getElementsByClassName("pass-active")[0];
+      activePass.childNodes[3].childNodes[2].innerHTML = "K40 1 / " + newActiveSeat.id;
+    }
+
+    function directReview() {
+      window.location.href = "review.html";
+    }
+
+    function directNextTrain() {
+      window.location.href = "seat2.html";
+    }
+  </script>
+</body>
+</html>

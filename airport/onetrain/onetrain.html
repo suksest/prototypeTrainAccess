@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>train Access</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body style="padding-top: 70px;">
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="well">
+    </div>
+    <nav>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#dep-train" data-toggle="tab">Choose Departure Train</a></li>
+      </ul>
+    </nav>
+    <div class="tab-content">
+      <div class="tab-pane active" id="dep-train">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">ARS U2</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Regular</td>
+                  <td>03:30<br>Medan</td>
+                  <td>04:01<br>Kuala Namu</td>
+                  <td>31m</td>
+                  <td><a class="btn btn-warning" onclick="directContact()">Choose</a><br>Rp 100.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">ARS U4</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Regular</td>
+                  <td>05:15<br>Medan</td>
+                  <td>05:46<br>Kuala Namu</td>
+                  <td>31m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 100.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">ARS U6</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Regular</td>
+                  <td>06:00<br>Medan</td>
+                  <td>06:31<br>Kuala Namu</td>
+                  <td>31m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 100.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">ARS U8</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Regular</td>
+                  <td>07:05<br>Medan</td>
+                  <td>07:38<br>Kuala Namu</td>
+                  <td>33m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 100.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- container -->
+  <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="row">
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+      <div class="row" style="color: white;">
+        <div class="col-lg-6">
+          <p>
+            Kelompok 1 - Sistem Informasi Tahun Akademik 2017/2018
+            Anggota Kelompok:
+            <ul>
+              <li>Azri Aliva Alhania (15152400)</li>
+              <li>Nur Rohman (151524025)</li>
+              <li>Sukma Setyaji (151524030)</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <!-- technology support -->
+        </div>
+      </div>
+    </div>
+  </div>
+</nav><script type="text/javascript">
+    window.onload = setDate();
+    function setDate(){
+      var date_now = new Date();
+      document.getElementsByClassName("well")[0].innerHTML = 'Medan ⇄ Kuala Namu <br> ' + formatDate(date_now) + ' 2 Adult';
+    }
+
+    function formatDate(date) {
+      var monthNames = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+      ];
+
+      var dayNames = [
+        "Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"
+      ];
+
+      var dayIndex = date.getDay();
+      var datenumber = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+
+      return dayIndex = dayNames[dayIndex] + ', ' + datenumber + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+
+    function directContact(){
+      window.location.href = "usercontact.html";
+    }
+  </script>
+</body>
+</html>

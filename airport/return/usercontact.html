@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>train Access</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body style = "padding-top: 70px;">
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="text-right"><span class="badge badge-active">1</span> Booking <span class="badge">2</span> Review <span class="badge">3</span> Payment <span class="badge">4</span> Procces <span class="badge">5</span> E-ticket Issued</p>
+      </div>
+    </div>
+    <h1>Booking</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Contact Information</h3>
+          </div>
+          <div class="panel-body">
+            <form class="contact-form">
+              <div class="row">
+                <div class="form-group col-lg-12">
+                  <label for="contact-name">Contact's Name</label>
+                  <input type="text" class="form-control" id="contact-name" placeholder="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="contact-phone">Phone number</label>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">+62</span>
+                    <input type="text" class="form-control" id="contact-phone" placeholder="" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="contact-email">Email</label>
+                  <input type="email" class="form-control" id="contact-email" placeholder="">
+                </div>
+              </div> <!-- row -->
+              <div class="row">
+                <div class="col-lg-push-9 col-lg-3">
+                  <button type="button" name="button" class="col-lg-push-9 btn btn-primary" onclick="validateContact()" style="margin-left: 1.9em;">Continue</button>
+                </div>
+              </div>
+            </form>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">Departure Train</h3>
+            <p id="dep-date"></p>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td id="dep-time"></td>
+                <td><strong>Medan</strong><br>Medan Station</td>
+              </tr>
+              <tr>
+                <td id="arr-time"></td>
+                <td><strong>Kuala Namu</strong><br>Kuala Namu Station</td>
+              </tr>
+            </table>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-6 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div id="warn-pass" class="col-lg-6">
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-warning-sign"></span> Passenger Details</h3>
+            <p></p>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li>Passenger details must be written as on ID card/passport/driving license</li>
+              <li>Passenger data cannot be changed after passing this page</li>
+            </ul>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-6 -->
+      <div id="det-return" class="col-lg-6">
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">Return Train</h3>
+            <p id="dep2-date"></p>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td id="dep2-time"></td>
+                <td><strong>Kuala Namu</strong><br>Kuala Namu Station</td>
+              </tr>
+              <tr>
+                <td id="arr2-time"></td>
+                <td><strong>Medan</strong><br>Medan Station</td>
+              </tr>
+            </table>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-6 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div id="det-pass1" class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Adult Passenger #1</h3>
+          </div>
+          <div class="panel-body">
+            <form class="contact-form">
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="pass1-title">Title</label>
+                  <select class="form-control" id="pass1-title" name="pass1-title">
+                    <option class="form-control" value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="pass1-name">Passenger Name</label>
+                  <input type="text" class="form-control" id="pass1-name">
+                </div>
+              </div> <!-- row -->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="pass1-id-type">Title</label>
+                  <select class="form-control" id="pass1-id-type" name="pass1-id-type">
+                    <option class="form-control" value="ID Card/KTP">ID Card/KTP</option>
+                    <option value="Driving License/SIM">Driving License/SIM</option>
+                    <option value="Passport">Passport</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="pass1-id-number">Passenger ID</label>
+                  <input type="text" class="form-control" id="pass1-id-number">
+                </div>
+              </div> <!-- row -->
+            </form>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-6 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div id="det-pass2" class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Adult Passenger #2</h3>
+          </div>
+          <div class="panel-body">
+            <form class="contact-form">
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="pass2-title">Title</label>
+                  <select class="form-control" id="pass2-title" name="pass2-title">
+                    <option class="form-control" value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="pass2-name">Passenger Name</label>
+                  <input type="text" class="form-control" id="pass2-name">
+                </div>
+              </div> <!-- row -->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="pass2-id-type">Title</label>
+                  <select class="form-control" id="pass2-id-type" name="pass2-id-type">
+                    <option class="form-control" value="ID Card/KTP">ID Card/KTP</option>
+                    <option value="Driving License/SIM">Driving License/SIM</option>
+                    <option value="Passport">Passport</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="pass2-id-number">Passenger ID</label>
+                  <input type="text" class="form-control" id="pass2-id-number">
+                </div>
+              </div> <!-- row -->
+            </form>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-6 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div id="det-price" class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Price Detail</h3>
+          </div>
+          <div class="panel-body">
+            ARS U2 (Adult) x 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 200.000,- <br>
+            ARS U1 (Adult) x 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 200.000,-
+          </div>
+          <div class="panel-footer">
+            Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 400.000,-
+          </div>
+        </div>
+      </div> <!-- col-lg-6 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div id="seat-payment" class="col-lg-push-3 col-lg-9">
+        <button type="button" name="button-seat" class="btn btn-warning" onclick="validatePassenger(this)">Choose Seat</button>&nbsp;or&nbsp;
+        <button type="button" name="button-payment" class="btn btn-primary" onclick="validatePassenger(this)">Continue Payment</button>
+      </div>
+    </div>
+  </div> <!-- container -->
+  <div class="modal fade" id="contact-confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div id="contact-confirmation-detail" class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Change</button>
+          <button type="button" class="btn btn-primary" onclick="directPassenger()" data-dismiss="modal">Yes, my contact is correct</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="contact-completion-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body">
+          Please complete your data.<br><br>To continue, make sure you have filled in all of the required information.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="row">
+          <a class="navbar-brand" href="index.html">train Access</a>
+        </div>
+        <div class="row" style="color: white;">
+          <div class="col-lg-6">
+            <p>
+              Kelompok 1 - Sistem Informasi Tahun Akademik 2017/2018
+              Anggota Kelompok:
+              <ul>
+                <li>Azri Aliva Alhania (15152400)</li>
+                <li>Nur Rohman (151524025)</li>
+                <li>Sukma Setyaji (151524030)</li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- technology support -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script type="text/javascript">
+    window.onload = setDate();
+    window.onload = setPage();
+    function setDate(){
+      var date_now = new Date();
+      var date_return = new Date(date_now.getTime() + 345599887);
+      document.getElementById("dep-date").innerHTML = formatDate(date_now);
+      document.getElementById("dep-time").innerHTML = "03:30<br>" + formatDate(date_now);
+      document.getElementById("arr-time").innerHTML = "04:01<br>" + formatDate(date_now);
+      document.getElementById("dep2-date").innerHTML = formatDate(date_return);
+      document.getElementById("dep2-time").innerHTML = "04:40<br>" + formatDate(date_return);
+      document.getElementById("arr2-time").innerHTML = "05:13<br>" + formatDate(date_return);
+    }
+
+    function formatDate(date) {
+      var monthNames = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+      ];
+
+      var dayNames = [
+        "Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"
+      ];
+
+      var dayIndex = date.getDay();
+      var datenumber = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+
+      return dayIndex = dayNames[dayIndex] + ', ' + datenumber + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+
+    function setPage(){
+      document.getElementById("warn-pass").style.visibility = "hidden";
+      document.getElementById("det-pass1").style.visibility = "hidden";
+      document.getElementById("det-pass2").style.visibility = "hidden";
+      document.getElementById("det-price").style.visibility = "hidden";
+      document.getElementById("seat-payment").style.visibility = "hidden";
+    }
+
+    function directPassenger(){
+      document.getElementById("warn-pass").style.visibility = "visible";
+      document.getElementById("det-pass1").style.visibility = "visible";
+      document.getElementById("det-pass2").style.visibility = "visible";
+      document.getElementById("det-price").style.visibility = "visible";
+      document.getElementById("seat-payment").style.visibility = "visible";
+    }
+
+    function validateContact(){
+      var status;
+      status = validateContactName();
+      status = validateContactPhone();
+      status = validateContactEmail();
+      if (status) {
+        document.getElementById("contact-confirmation-detail").innerHTML = "Your e-ticket will be sent to " + document.getElementById("contact-email").value + " and its summary will be sent to " + document.getElementById("contact-phone").value + ". <br><br>Please confirm if your contact details are correct.";
+        $('#contact-confirmation-modal').modal("show");
+      }else{
+        $('#contact-completion-modal').modal("show");
+      }
+    }
+
+    function validatePassenger(obj_button){
+      var status;
+      status = validatePassengerName();
+      status = validatePassengerId();
+      if (status) {
+        if (obj_button.name == "button-seat") {
+          window.location.href = "seat.html";
+        }else if (obj_button.name == "button-payment") {
+          window.location.href = "review.html"
+        }
+      }else{
+        $('#contact-completion-modal').modal("show");
+      }
+    }
+
+    function validateContactName(){
+      return (document.getElementById("contact-name").value != "") ? true : false;
+    }
+
+    function validateContactPhone(){
+      return (document.getElementById("contact-phone").value != "") ? true : false;
+    }
+
+    function validateContactEmail(){
+      return (document.getElementById("contact-email").value != "") ? true : false;
+    }
+
+    function validatePassengerName(){
+      return (document.getElementById("pass1-name").value != "" && document.getElementById("pass2-name").value != "" ) ? true : false;
+    }
+
+    function validatePassengerId(){
+      return (document.getElementById("pass1-id-number").value != "" && document.getElementById("pass2-id-number").value != "" ) ? true : false;
+    }
+  </script>
+</body>
+</html>
