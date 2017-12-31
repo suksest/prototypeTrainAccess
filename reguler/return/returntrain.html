@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>train Access</title>
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../assets/js/jquery.min.js" charset="utf-8"></script>
-  <script src="../assets/js/bootstrap.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
 </head>
 <body style="padding-top: 70px;">
   <!-- Static navbar -->
@@ -28,7 +28,8 @@
     </div>
     <nav>
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#dep-train" data-toggle="tab">Choose Departure Train</a></li>
+        <li role="presentation" class="active"><a href="#dep-train" data-toggle="tab">1. Choose Departure Train</a></li>
+        <li role="presentation"><a href="#ret-train" data-toggle="tab">2. Choose Return Train</a></li>
       </ul>
     </nav>
     <div class="tab-content">
@@ -50,7 +51,7 @@
                   <td>06:15<br>Bandung</td>
                   <td>10:27<br>Cirebon</td>
                   <td>4h 12m</td>
-                  <td><a class="btn btn-warning" onclick="directContact()">Choose</a><br>Rp 115.000</td>
+                  <td><a class="btn btn-warning" onclick="returnTrain()">Choose</a><br>Rp 115.000</td>
                 </tr>
               </tbody>
             </table>
@@ -73,7 +74,7 @@
                   <td>06:15<br>Bandung</td>
                   <td>10:27<br>Cirebon</td>
                   <td>4h 12m</td>
-                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 135.000</td>
+                  <td><button class="btn btn-warning" onclick="returnTrain()">Choose</button><br>Rp 135.000</td>
                 </tr>
               </tbody>
             </table>
@@ -96,7 +97,7 @@
                   <td>21:25<br>Bandung</td>
                   <td>01:37(+1 day)<br>Cirebon</td>
                   <td>4h 12m</td>
-                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 140.000</td>
+                  <td><button class="btn btn-warning" onclick="returnTrain()">Choose</button><br>Rp 140.000</td>
                 </tr>
               </tbody>
             </table>
@@ -119,9 +120,104 @@
                   <td>21:25<br>Bandung</td>
                   <td>01:37(+1 day)<br>Cirebon</td>
                   <td>4h 12m</td>
-                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 165.000</td>
+                  <td><button class="btn btn-warning" onclick="returnTrain()">Choose</button><br>Rp 165.000</td>
                 </tr>
               </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="ret-train">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Harina</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Economy (Q)</td>
+                  <td>00:16<br>Cirebon</td>
+                  <td>04:11<br>Bandung</td>
+                  <td>3h 55m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 120.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Ciremai</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Executive (A)</td>
+                  <td>06:15<br>Cirebon</td>
+                  <td>10:27<br>Bandung</td>
+                  <td>4h 12m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 135.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Harina</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Economy (C)</td>
+                  <td>21:25<br>Cirebon</td>
+                  <td>01:37(+1 day)<br>Bandung</td>
+                  <td>4h 12m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 140.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Ciremai</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Executive (A)</td>
+                  <td>21:25<br>Cirebon</td>
+                  <td><span class="glyphicon glyphicon-"></span></td>
+                  <td>01:37(+1 day)<br>Bandung</td>
+                  <td>4h 12m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()" >Choose</button><br>Rp 165.000</td>
+              </tbody>
+              </tr>
             </table>
           </div>
         </div>
@@ -177,8 +273,12 @@
     }
 
     function directContact(){
-      window.location.href = "../onetrain/usercontact.html";
+      window.location.href = "usercontact.html";
     }
+
+    function returnTrain(){
+      $(".nav-tabs li a[href='#ret-train']").tab("show")
+    };
   </script>
 </body>
 </html>

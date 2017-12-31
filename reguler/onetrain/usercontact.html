@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>train Access</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script src="assets/js/jquery.min.js" charset="utf-8"></script>
-  <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
 </head>
 <body style = "padding-top: 70px;">
   <!-- Static navbar -->
@@ -100,26 +99,6 @@
               <li>Passenger details must be written as on ID card/passport/driving license</li>
               <li>Passenger data cannot be changed after passing this page</li>
             </ul>
-          </div> <!-- panel body -->
-        </div> <!-- panel -->
-      </div> <!-- col-lg-6 -->
-      <div id="det-return" class="col-lg-6">
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title">Return Train</h3>
-            <p id="dep2-date"></p>
-          </div>
-          <div class="panel-body">
-            <table class="table">
-              <tr>
-                <td id="dep2-time"></td>
-                <td><strong>Cirebon</strong><br>Cirebon Station</td>
-              </tr>
-              <tr>
-                <td id="arr2-time"></td>
-                <td><strong>Bandung</strong><br>Bandung Station</td>
-              </tr>
-            </table>
           </div> <!-- panel body -->
         </div> <!-- panel -->
       </div> <!-- col-lg-6 -->
@@ -216,10 +195,9 @@
           </div>
           <div class="panel-body">
             Ciremai (Adult) x 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 230.000,- <br>
-            Harina (Adult) x 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 230.000,-
           </div>
           <div class="panel-footer">
-            Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 460.000,-
+            Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rp 230.000,-
           </div>
         </div>
       </div> <!-- col-lg-6 -->
@@ -290,9 +268,6 @@
       document.getElementById("dep-date").innerHTML = formatDate(date_now);
       document.getElementById("dep-time").innerHTML = "06:15<br>" + formatDate(date_now);
       document.getElementById("arr-time").innerHTML = "10:27<br>" + formatDate(date_now);
-      document.getElementById("dep2-date").innerHTML = formatDate(date_return);
-      document.getElementById("dep2-time").innerHTML = "06:15<br>" + formatDate(date_return);
-      document.getElementById("arr2-time").innerHTML = "10:27<br>" + formatDate(date_return);
     }
 
     function formatDate(date) {

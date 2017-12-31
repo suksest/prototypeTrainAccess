@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>train Access</title>
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../assets/js/jquery.min.js" charset="utf-8"></script>
-  <script src="../assets/js/bootstrap.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
 </head>
 <body style = "padding-top: 70px;">
   <!-- Static navbar -->
@@ -55,6 +56,25 @@
             </table>
           </div> <!-- panel body -->
         </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Return Train</h3>
+            <p id="dep2-date"></p>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td id="dep2-time"></td>
+                <td><strong>Cirebon</strong><br>Cirebon Station</td>
+                <td rowspan="2"><strong>Harina</strong><br>Economy (C)</td>
+              </tr>
+              <tr>
+                <td id="arr2-time"></td>
+                <td><strong>Bandung</strong><br>Bandung Station</td>
+              </tr>
+            </table>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
       </div>
       <div class="col-lg-6">
         <div class="panel panel-primary">
@@ -141,6 +161,9 @@ function setDate(){
   document.getElementById("dep-date").innerHTML = formatDate(date_now);
   document.getElementById("dep-time").innerHTML = "06:15<br>" + formatDate(date_now);
   document.getElementById("arr-time").innerHTML = "10:27<br>" + formatDate(date_now);
+  document.getElementById("dep2-date").innerHTML = formatDate(date_return);
+  document.getElementById("dep2-time").innerHTML = "06:15<br>" + formatDate(date_return);
+  document.getElementById("arr2-time").innerHTML = "10:27<br>" + formatDate(date_return);
 }
 
 function formatDate(date) {

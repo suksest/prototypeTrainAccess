@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>train Access</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script src="assets/js/jquery.min.js" charset="utf-8"></script>
-  <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+  <script src="../../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../../assets/js/bootstrap.min.js" charset="utf-8"></script>
 </head>
 <body style = "padding-top: 70px;">
   <!-- Static navbar -->
@@ -30,11 +30,11 @@
         <p class="text-right"><span class="badge badge-active">1</span> Booking <span class="badge">2</span> Review <span class="badge">3</span> Payment <span class="badge">4</span> Procces <span class="badge">5</span> E-ticket Issued</p>
       </div>
     </div>
-    <h1>Select Return Seat (2 of 2)</h1>
+    <h1>Select Departure Seat (1 of 2)</h1>
     <div class="row">
       <div class="col-lg-6">
-        <h4>Cirebon - Bandung</h4>
-        <p id="ret-date"></p>
+        <h4>Bandung - Cirebon</h4>
+        <p id="dep-date"></p>
       </div>
       <div class="col-lg-6">
         <h4>Seat Selection Time</h4>
@@ -202,7 +202,7 @@
     <div class="row">
       <div id="seat-payment" class="col-lg-push-8 col-lg-4">
         <button type="button" name="button-seat" class="btn btn-warning" onclick="directReview()">Restore Default Seat</button>&nbsp;or&nbsp;
-        <button type="button" name="button-payment" class="btn btn-primary" onclick="directReview()">Next Train</button>
+        <button type="button" name="button-payment" class="btn btn-primary" onclick="directNextTrain()">Next Train</button>
       </div>
     </div>
   </div> <!-- container -->
@@ -238,7 +238,7 @@
     function setDate(){
       var date_now = new Date();
       var date_return = new Date(date_now.getTime() + 345599887);
-      document.getElementById("ret-date").innerHTML = formatDate(date_return) + ", 2 Adult";
+      document.getElementById("dep-date").innerHTML = formatDate(date_now) + ", 2 Adult";
     }
 
     function formatDate(date) {
