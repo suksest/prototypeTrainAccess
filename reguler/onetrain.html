@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <title>train Access</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/jquery.min.js" charset="utf-8"></script>
   <script src="../assets/js/bootstrap.min.js" charset="utf-8"></script>
 </head>
-<body style = "padding-top: 70px;">
+<body style="padding-top: 70px;">
   <!-- Static navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -24,9 +24,108 @@
     </div>
   </nav>
   <div class="container">
-    <div class="jumbotron">
-      <h1>Maaf, Halaman ini belum tersedia</h1>
-      <p>Halaman ini berisi pemilihan tiket sekali jalan (one way)</p>
+    <div class="well">
+    </div>
+    <nav>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#dep-train" data-toggle="tab">Choose Departure Train</a></li>
+      </ul>
+    </nav>
+    <div class="tab-content">
+      <div class="tab-pane active" id="dep-train">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Ciremai</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Business (B)</td>
+                  <td>06:15<br>Bandung</td>
+                  <td>10:27<br>Cirebon</td>
+                  <td>4h 12m</td>
+                  <td><a class="btn btn-warning" onclick="directContact()">Choose</a><br>Rp 115.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Ciremai</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Executive (A)</td>
+                  <td>06:15<br>Bandung</td>
+                  <td>10:27<br>Cirebon</td>
+                  <td>4h 12m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 135.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Harina</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Economy (C)</td>
+                  <td>21:25<br>Bandung</td>
+                  <td>01:37(+1 day)<br>Cirebon</td>
+                  <td>4h 12m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 140.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p style="font-size: 1.25em;">Harina</p>
+            <table class="table">
+              <thead>
+                <th>Train</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per person</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Exuctive (A)</td>
+                  <td>21:25<br>Bandung</td>
+                  <td>01:37(+1 day)<br>Cirebon</td>
+                  <td>4h 12m</td>
+                  <td><button class="btn btn-warning" onclick="directContact()">Choose</button><br>Rp 165.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div> <!-- container -->
   <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
@@ -54,6 +153,32 @@
     </div>
   </div>
 </nav><script type="text/javascript">
+    window.onload = setDate();
+    function setDate(){
+      var date_now = new Date();
+      document.getElementsByClassName("well")[0].innerHTML = 'Bandung ⇄ Cirebon <br> ' + formatDate(date_now) + ' 2 Adult';
+    }
+
+    function formatDate(date) {
+      var monthNames = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+      ];
+
+      var dayNames = [
+        "Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"
+      ];
+
+      var dayIndex = date.getDay();
+      var datenumber = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+
+      return dayIndex = dayNames[dayIndex] + ', ' + datenumber + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+
+    function directContact(){
+      window.location.href = "../onetrain/usercontact.html";
+    }
   </script>
 </body>
 </html>

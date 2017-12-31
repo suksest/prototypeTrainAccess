@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>train Access</title>
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <script src="../assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../assets/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body style = "padding-top: 70px;">
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">train Access</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="text-right"><span class="badge badge-active">1</span> Booking <span class="badge badge-active">2</span> Review <span class="badge">3</span> Payment <span class="badge">4</span> Procces <span class="badge">5</span> E-ticket Issued</p>
+      </div>
+    </div>
+    <h1>Please Review Your Booking</h1>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="alert alert-success" role="alert">
+          <p><span class="glyphicon glyphicon-ok-circle"></span> The price has been confirmed. Please check your booking details then click Continue to Payment.</p>
+        </div>
+      </div> <!-- col-lg-12 -->
+    </div> <!-- row -->
+    <h3>Booking Details</h3>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Departure Train</h3>
+            <p id="dep-date"></p>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td id="dep-time"></td>
+                <td><strong>Bandung</strong><br>Bandung Station</td>
+                <td rowspan="2"><strong>Ciremai</strong><br>Executive (A)</td>
+              </tr>
+              <tr>
+                <td id="arr-time"></td>
+                <td><strong>Cirebon</strong><br>Cirebon Station</td>
+              </tr>
+            </table>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-8 -->
+      <div class="col-lg-4">
+        <div class="well well-md">
+          <p class="text-center" style="font-size: 1.5em;">Booking ID <span class="text-primary">215254330</span></p>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-justified">By clicking Continue to Payment, you agree to our Terms & Conditions and Privacy Policy</p>
+            <button type="button" class="btn btn-primary btn-block" onclick="directPayment()">Continue to Payment</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">List of Passenger(s)</h3>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2"><strong>1. Mr Nur Rohman(adult)</strong></td>
+                </tr>
+                <tr>
+                  <td>ID Card / KTP</td>
+                  <td>3277002210960016</td>
+                </tr>
+                <tr>
+                  <td>Seat Number (depart)</td>
+                  <td>Executive 1/1A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> <!-- panel body -->
+          <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2"><strong>2. Mrs Azri Aliva Alhania(adult)</strong></td>
+                </tr>
+                <tr>
+                  <td>ID Card / KTP</td>
+                  <td>3277894909949999</td>
+                </tr>
+                <tr>
+                  <td>Seat Number (depart)</td>
+                  <td>Executive 1/1B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> <!-- panel body -->
+        </div> <!-- panel -->
+      </div> <!-- col-lg-8 -->
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Price Details</h3>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td>Ciremai (Adult) x 2</td>
+                <td>Rp 230.000,-</td>
+              </tr>
+              <tr>
+                <td>Convenience fee</td>
+                <td>Rp 15.000,-</td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <table class="table">
+              <tr>
+                <td>Total price</td>
+                <td>Rp 245.000,-</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="text-justified">By clicking Continue to Payment, you agree to our Terms & Conditions and Privacy Policy</p>
+          </div>
+          <div class="col-lg-6">
+            <button type="button" class="btn btn-primary btn-block" onclick="directPayment()">Continue to Payment</button>
+          </div>
+        </div>
+      </div> <!-- col-lg-8 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+  <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0; margin-top: 1em;">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="row">
+          <a class="navbar-brand" href="index.html">train Access</a>
+        </div>
+        <div class="row" style="color: white;">
+          <div class="col-lg-6">
+            <p>
+              Kelompok 1 - Sistem Informasi Tahun Akademik 2017/2018
+              Anggota Kelompok:
+              <ul>
+                <li>Azri Aliva Alhania (15152400)</li>
+                <li>Nur Rohman (151524025)</li>
+                <li>Sukma Setyaji (151524030)</li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- technology support -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<script type="text/javascript">
+  window.onload = setDate();
+  function setDate(){
+    var date_now = new Date();
+    var date_return = new Date(date_now.getTime() + 345599887);
+    document.getElementById("dep-date").innerHTML = formatDate(date_now);
+    document.getElementById("dep-time").innerHTML = "06:15<br>" + formatDate(date_now);
+    document.getElementById("arr-time").innerHTML = "10:27<br>" + formatDate(date_now);
+  }
+
+  function formatDate(date) {
+    var monthNames = [
+      "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+    ];
+
+    var dayNames = [
+      "Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"
+    ];
+
+    var dayIndex = date.getDay();
+    var datenumber = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return dayIndex = dayNames[dayIndex] + ', ' + datenumber + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
+
+  function directPayment(){
+    window.location.href = "payment.html";
+  }
+</script>
+</body>
+</html>
