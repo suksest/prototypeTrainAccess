@@ -304,13 +304,9 @@
 
       var newActiveSeat = document.getElementsByClassName("seat-cell-selected")[0];
       var currentActiveSeat = document.getElementsByClassName("seat-cell-active")[0];
-      var temp = newActiveSeat.innerHTML;
-      newActiveSeat.innerHTML = currentActiveSeat.innerHTML;
       newActiveSeat.setAttribute("class","seat-cell seat-cell-active");
       newActiveSeat.removeAttribute("onclick");
-      currentActiveSeat.innerHTML = temp;
       currentActiveSeat.setAttribute("class","seat-cell seat-cell-selected");
-      currentActiveSeat.setAttribute("onclick","setActiveSeat(this)");
 
       var activePass = document.getElementsByClassName("pass-active")[0];
       activePass.childNodes[3].childNodes[2].innerHTML = "K40 1 / " + newActiveSeat.id;
